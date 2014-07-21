@@ -1,0 +1,13 @@
+clearscreen.
+print "3". wait 1.
+print "2". wait 1.
+print "1". wait 1.
+
+lock throttle to 1.
+lock steering to up + R(0,0,180).
+stage.
+print "Launch!".
+
+wait until altitude > 10000.
+lock steering to up + R(0,0,180) + R(0,-60,0).
+print "Begining Gravity Turn".

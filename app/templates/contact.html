@@ -1,0 +1,48 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	{% if metatitle %} 
+	<title>{{metatitle}}</title>
+	{% else %}
+	<title>Contact | Silly Coffee Translation</title>
+	{% endif %}
+	<meta name="keywords" content="Chinese to English Translation" />
+	<meta name="description" content="{{metadescription}}" />
+	<link href="/static/css/style.css" rel="stylesheet" media="screen">
+	<!--[of IE 6]><link href="default_shiity_browser.css" rel="stylesheet" type="text/css" /><endif>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+</head>
+
+<body>
+	<div class="main">
+		<div class="formwrapper">
+			<form action="" method="post" name="loginform">
+				{{form.hidden_tag()}}
+				<h3>give me a peice of your mind</h3>
+				
+				{% if form.errors.nickname_or_email or form.errors.password %}
+				<div class="errorwrap">
+					<p>{% for error in form.nickname_or_email.errors %}
+						{{ error }}
+						{% endfor %}</p>
+					<p>{% for error in form.password.errors %}
+						{{ error }}
+						{% endfor %}</p>
+				</div>
+				{% endif %}
+				
+				{{ form.name(placeholder="name", size = 30) }}
+
+				{{ form.email(placeholder="email", size = 30) }}
+				{{ form.text(placeholder="type your comment in this silly box. :) ")}}
+				{{ form.submit }} <a href="{{url_for('index')}}">Back</a>
+			</form>
+		</div>
+	</div>
+<script>
+(function() {
+	$('button').on('click', function() {
+		$('form')[0].rest()
+	});
+})();
+</script>
+</body>

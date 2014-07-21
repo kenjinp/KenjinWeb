@@ -1,0 +1,39 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	{% if metatitle %} 
+	<title>{{metatitle}}</title>
+	{% else %}
+	<title>Login | Silly Coffee Translation</title>
+	{% endif %}
+	<meta name="keywords" content="Chinese to English Translation" />
+	<meta name="description" content="{{metadescription}}" />
+	<link href="/static/css/stylebase.css" rel="stylesheet" media="screen">
+	<!--[of IE 6]><link href="default_shiity_browser.css" rel="stylesheet" type="text/css" /><endif>-->
+</head>
+<body>
+	<div class="main">
+		<h1 class="logologin"><a href="{{url_for('index')}}">Silly Coffee</a></h1>
+		<div class="formwrapper">
+			<form action="" method="post" name="signupform">
+				<h2>Sign Yourself Up!</h2>
+				<h3><a href="{{ url_for('login') }}">Or Login</a></h3>
+				{{form.hidden_tag()}}
+				<ul>
+
+					<li>{{ form.nickname(placeholder = "nickname", size = 30) }}</li>
+
+					<li>{{ form.email(placeholder = "email", size = 30) }}</li>
+
+					<li>{{ form.password(placeholder = "password", size = 30) }}</li>
+				
+					<li>{{ form.verify_password(placeholder = "verify password", size = 30) }}</li>
+
+					<li>{{ form.submit }}</li>
+
+				</ul>
+
+			</form>
+		</div>
+			<p><a href="login/li">Signup with Linkedin!</a></p>
+	</div>
+</body>
