@@ -18,7 +18,7 @@ def send_email(subject, sender, recipients, text_body, html_body):
 
 def contact_email(email, name, txt):
         print "Contact Email Sent"
-        send_email("Silly Coffee | Contact Form",
+        send_email("KenjinWeb | Contact Form",
                 ADMINS[0],
                 ADMINS,
                 render_template("contact_email.txt", email = email,
