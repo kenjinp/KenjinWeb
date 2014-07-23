@@ -22,11 +22,5 @@
 				{{ form.text(placeholder="type your comment in this silly box. :) ")}}
 				{{ form.submit }} <a href="{{url_for('index')}}">Back</a>
 			</form>
-<script>
-(function() {
-	$('button').on('click', function() {
-		$('form')[0].rest()
-	});
-})();
-</script>
+		</div>
 {% endblock %}
